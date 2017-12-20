@@ -1,5 +1,5 @@
 {
-    "name": "knplabs/console-service-provider",
+    "name": "corpnet/console",
     "type": "library",
     "description": "console service provider for Silex",
     "keywords": [ "console", "silex" ],

@@ -19,20 +19,15 @@ class LintCommand extends BaseLintCommand
      */
     public function __construct(Container $container)
     {
-        parent::__construct();
+        parent::__construct($container['twig']);
 
         $this->container = $container;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    protected function getTwigEnvironment()
+    protected function configure()
     {
-        if (null === $twig = parent::getTwigEnvironment()) {
-            $this->setTwigEnvironment($twig = $this->container['twig']);
-        }
+        parent::configure();
 
-        return $twig;
+        $this->setName(self::$defaultName);
     }
 }
